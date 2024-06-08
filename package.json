@@ -7,19 +7,23 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4",
     "@sap/cds-hana": "^2",
-    "@sap/xssec": "^3"
+    "@sap/xssec": "^3",
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
-    "eslint": "^9"
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sap/ux-specification": "^1.120.11",
+    "@sapui5/ts-types": "^1.92.2",
+    "eslint": "^7.32.0"
   },
   "scripts": {
     "start": "cds-serve",
-    "h-deploy": "cds deploy --to hana:CAPHANAFE-dev"
+    "h-deploy": "cds deploy --to hana:CAPHANAFE-dev",
+    "watch-fe-bookshop": "cds watch --open fe-bookshop/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "build": {
@@ -37,5 +41,8 @@
       "db": "hana",
       "auth": "xsuaa"
     }
-  }
+  },
+  "sapux": [
+    "app/fe-bookshop"
+  ]
 }
